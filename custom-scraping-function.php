@@ -1,6 +1,6 @@
 <?php
 
-require_once('simple-curl-request.php');
+require_once('functions/simple-curl-function.php');
 
 $url = 'http://testing-ground.scraping.pro';
 

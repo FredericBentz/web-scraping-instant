@@ -1,20 +1,10 @@
 <?php
 
-require_once('simple-curl-request.php');
+require_once('functions/simple-curl-function.php');
+require_once('functions/simple-xpath-function.php');
 
 $data = array();
 $url = 'http://testing-ground.scraping.pro';
-
-function getXpathObject($item)
-{
-	$xmlPageDom = new DomDocument();
-
-	@$xmlPageDom->loadHTML($item);
-
-	$xmlPageXpath = new DOMXPath($xmlPageDom);
-
-	return $xmlPageXpath;
-}
 
 $testingPage = getRequest($url);
 $testingPageXpath = getXpathObject($testingPage);

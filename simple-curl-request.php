@@ -1,19 +1,9 @@
 <?php
 
-function getRequest($url)
-{
+require_once('functions/simple-curl-function.php');
 
-	$ch = curl_init();
+$url = 'http://testing-ground.scraping.pro/';
 
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	curl_setopt($ch, CURLOPT_URL, $url);
+$page = getRequest($url);
 
-	$results = curl_exec($ch);
-
-	curl_close($ch);
-
-
-	return $results;
-}
-
+echo $page;
