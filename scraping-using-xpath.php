@@ -3,7 +3,7 @@
 require_once('simple-curl-request.php');
 
 $data = array();
-$page = 'http://testing-ground.scraping.pro';
+$url = 'http://testing-ground.scraping.pro';
 
 function getXpathObject($item)
 {
@@ -16,7 +16,7 @@ function getXpathObject($item)
 	return $xmlPageXpath;
 }
 
-$testingPage = getRequest($page);
+$testingPage = getRequest($url);
 $testingPageXpath = getXpathObject($testingPage);
 
 $title = $testingPageXpath->query('//div[@id="title"]');
