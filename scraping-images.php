@@ -18,8 +18,6 @@ if($logo->length > 0)
 	$logoName = end(explode("/", $logoSrc));
 	$logoAbsPath = $imagesPath.$logoSrc;
 
-	echo $logoSrc;
-
 	if(getimagesize($logoAbsPath))
 	{
 		$logoFile = getRequest($logoAbsPath);
