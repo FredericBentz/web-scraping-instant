@@ -15,7 +15,7 @@ function calculateProductIndex($page_id, $product_index)
 
 
 // loop all category pages
-for($i=1; $i<=3; $i++)
+for($i=1; $i<=1; $i++)
 {
 	$categoryUrl = str_replace("{page_id}", $i, $categoryPageUrl);
 	$pageSrc = getRequest($categoryUrl);
@@ -28,7 +28,7 @@ for($i=1; $i<=3; $i++)
 	{	
 		$position = calculateProductIndex($i, $j);
 		$title = $titleXpath->item($j)->nodeValue;
-		$products[$position]['title'] = $title;
+		$products[$position]['name'] = $title;
 	}
 
 	// get product url
@@ -61,7 +61,7 @@ for($i=1; $i<=3; $i++)
 		$priceSup = $priceSupXpath->item($j)->nodeValue;
 		$price = str_replace(".", "", $price);
 
-		$products[$position]['price'] = $price.",".$priceSup;
+		$products[$position]['price'] = $price.".".$priceSup;
 	}
 	
 
