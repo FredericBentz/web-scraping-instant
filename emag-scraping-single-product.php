@@ -23,8 +23,10 @@ $code = $codeArr[1];
 $result['code'] = $code;
 
 // get price
-$priceXpath = $pageXPath->query('//p[@class="product-new-price"]');
+$priceXpath = $pageXPath->query('//p[@class="product-new-price"]/node()[not(self::sup)]');
 $price = $priceXpath->item(0)->nodeValue;
+$price = str_replace(".", "", $price);
+
 
 $priceSupXpath = $pageXPath->query('//p[@class="product-new-price"]/sup');
 $priceSup = $priceSupXpath->item(0)->nodeValue;
